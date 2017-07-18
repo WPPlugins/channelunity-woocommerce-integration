@@ -1,0 +1,54 @@
+<div class="cu_container" id="cu_container">
+    
+    <img src="<?php echo $culogo; ?>"><br>
+    <h1>
+        Mapping Orders
+    </h1>
+    
+    This tool lets you view orders in different statuses on a Google Map.<br><br>
+    
+    <div id='cu_map_container' class='cu_holder cu_cssmap'>
+        <input class='button' type="button" value="Configure" onclick='cujs_toggleMapOptions()'/>Show and hide API key, statuses to display and date range.<br>
+        <div id="cu_mapoptions" style="display:none; max-width: 660px; width:660px;" class="cu_floating_container">
+                You will need a Google Maps API Key. If you don't have one, get one by clicking 
+                <a href="https://developers.google.com/maps/documentation/javascript" target="_blank">here</a> and clicking 'GET A KEY'
+                <br><hr>
+                
+                <div class="cu_label cu_wide">When you have a key, enter it here:</div>
+                <input class="button cu_input" id="cu_mapapikey" type="text">
+                <input type='button' value='Save API Key' onclick='cujs_saveApiKey()'>
+                <span class='cu_error' id='cu_invalid_mapkey' style='display:none;'>
+                    <br>This doesn't appear to be a valid Google API key - please check and try again
+                </span>
+                <br><hr>
+                <div id='cu_mapoptions2' style='display:none'>
+                    <div class="cu_label cu_wide">Select status of orders to display:</div>
+                    <select class='cu_input' id='cu_mapstat' multiple></select><br>
+                    (Use CTRL to select<br>more than one)
+                    <br><br><br><hr>
+
+                    <div class="cu_label cu_wide">Select date range:</div>
+                    <input type="text" class="custom_date" id="cu_map_start_date" value=""/> to
+                    <input type="text" class="custom_date" id="cu_map_end_date" value=""/>
+                    <br><hr>
+                    <div style='float:right;'>
+                        <input class='button' type="button" onclick="cujs_configureMapColours()" value="Marker Colours">
+                        <input class='button' type="button" onclick="cujs_updateMap()" value="Update Map">
+                    </div>
+                    <br><br>
+                    <div id='cu_marker_config' style='display: none; max-width: 660px; width:660px; clear:both;'>
+                        
+                        <hr>
+                        <div class="cu_label cu_wide" style='float:left; display:inline-block'>
+                            Configure marker colours:<br>
+                            <input class='button' type="button" onclick="cujs_updateMapColours()" value="Update Marker Colours">
+                        </div>
+                        <div id='cu_mapcolourtable'><?php echo $colourtab; ?></div>
+                    </div>
+                </div>
+
+        </div>
+        <div id='cu_locationerrors'></div>
+        <div id="cu_actualmap" class="cu_map"></div>
+    </div>
+</div>

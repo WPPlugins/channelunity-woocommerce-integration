@@ -1,0 +1,55 @@
+<div class="cu_container" id="cu_container">  
+    
+    <img src="<?php echo $culogo; ?>"><br>
+    <h1>
+        Bulk Product Update Tool
+    </h1>
+    This tool allows you to import a CSV file to update products in WooCommerce.<br>
+    The fields in the CSV will be mapped to fields in WooCommerce before importing the data.<br><br>
+    
+    <div id='cu_bulkimport_container' class='cu_holder cu_cssbulkimport'>
+        <div id="uploadcsvblock">
+            <h4>
+                Firstly, import your CSV:
+            </h4>
+            <div class="cu_csvbuttons">
+                <form id="cu_csvimport">
+                    <input type="file" class="cu_inputfile" id="importcsv" onchange="cujs_setCsvFilename()" name="importcsv">
+                    <label for="importcsv" class="cu_csvbutton">Select CSV</label>
+                    <div id='cu_csvfilename' class="cu_filetarget">&nbsp;</div>
+                    <div class="cu_csvbutton" onclick="cujs_uploadcsv()" style="float:right;">Upload</div>
+                    <input type="hidden" id="importcsvnonce">
+                    <input type="hidden" id="importcsvnoncetime">
+                </form>
+                <span id="csvprogress" style="display:none">
+                    File uploading<br>
+                    <img src="<?php echo $progressbar; ?>">
+                </span>
+                <span id="notacsv" class="cu_error" style="display:none">Sorry, this seems to be an invalid csv file. Please check and try again</span>
+            </div>  
+        </div>
+
+        <div id="csvimportingprogress" class="cu_filetarget" style="display:none">
+            Importing products - done so far:<span id='cu_importedcount'></span><br>
+            <img src="<?php echo $progressbar; ?>">
+        </div>
+
+        <div id="csv_field_mapper"  style="display:none;">
+            <h4>
+                Now drag CSV column headings on the left to WooCommerce fields on the right.
+            </h4>
+            You will need to map a column to SKU so that we know which product to update.
+            <div class="cu_csvbuttons">
+                <div id="cu_buttonholder">
+                    <div class="cu_csvbutton" onclick="cujs_uploadDifferent()">Upload a different file</div>
+                    <div class="cu_csvbutton cu_csvbutton_disabled" onclick="cujs_finishedMapping()" id="cu_beginbulkupdate">Finished mapping</div>
+                    <div id="importerror" class="cu_error" style="display:none"></div>        
+                </div>
+            </div>
+            
+            <div id="csv_field_container" class="cu_field_container"></div>
+            <div id="woo_field_container" class="cu_field_container"></div>
+        </div>
+    </div>
+    
+</div>

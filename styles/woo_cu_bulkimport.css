@@ -1,0 +1,116 @@
+/*
+Bulk import tool styles
+*/
+
+.cu_container{
+    position: absolute;
+    top:0px; 
+    left:0px; 
+    width:100%; 
+    min-height:99%;
+    background-color: #F0F0F0;
+    padding-top:10px;
+}
+
+.cu_woofield{
+    display: inline-block;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    background-color:#FAFAFA;
+    padding:4px;
+    width:300px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.cu_field_container{
+    display: inline-block;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    background-color:#E0E0E0;
+    padding:20px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    max-height: 500px;
+    vertical-align: top;
+    box-shadow: 3px 3px 3px 0px rgba(220,220,220,1);
+}
+
+.cu_redcross{
+    font-size:8pt;
+    font-weight: bolder;
+    color:red;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    padding: 0px 4px;
+    margin-top:-1px;
+    margin-bottom:-2px;
+    float:right;
+    cursor:pointer;
+}
+
+.cu_csvbuttons{
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    background-color:#DDDDDD;
+    padding:8px;
+    height:40px;
+    margin-bottom: 20px;   
+    width: 810px;
+    box-shadow: 3px 3px 3px 0px rgba(220,220,220,1);
+}
+
+.cu_csvbutton{
+    border: 1px outset;
+    border-radius: 4px;
+    background-color:#DDFFDD;
+    height:36px;
+    line-height: 36px;
+    margin-right:30px;
+    width:140px;
+    display:inline-block;
+    text-align: center;
+    box-shadow: 0px 2px 2px 0px rgba(170,170,170,1);
+    cursor:pointer;
+}
+
+.cu_csvbutton_disabled {
+    background-color: #999999;
+}
+
+.cu_inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.cu_inputfile:focus + label {
+	outline: 2px dotted #006600;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.cu_filetarget{
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    background-color:#FAFAFA;
+    height:36px;
+    line-height: 36px;
+    width:300px;
+    display: inline-block;
+    box-shadow: 0px 2px 2px 0px rgba(170,170,170,1);
+    padding-left: 10px;
+}
+
+.cu_fieldbreak{
+    border-bottom: 1px dashed #999999;
+  
+    padding: 1px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    font-size: smaller;
+    color: #888888;
+}

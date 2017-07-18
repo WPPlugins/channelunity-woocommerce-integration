@@ -1,0 +1,78 @@
+<!--Display the signup form-->
+<div class='cu_contain' id='signupForm'>
+    <h2>No valid account details found</h2><br>
+    We couldn't find ChannelUnity login details for your account. If you already have an account, select 'Settings' in the WooCommerce plugin<br>
+    Go to the ChannelUnity Tab, enter your account details and click 'Save Changes'. Then return to this page.<br><br>
+    <h2>Sign up for a new account</h2>
+    If you would like to sign up for a new account, please fill in this form.<br><br>
+    <div id="login_error" class="cu_login_err"></div>
+    <form id='frmNew' action=createcode method="post">
+
+        <div class="cu_section">
+            <h2 class="cu_h2">Basic information:</h2>
+            <h3 class="cu_h3">What is your name?</h3>
+            <input class="cu_signup_input" id='contactname' name='contactname' placeholder='Please enter your full name'>
+            <h3 class="cu_h3">What is your email address?</h3>
+            <input class="cu_signup_input" id='emailaddress' name='emailaddress' placeholder='Please enter a valid email address'>
+            <h3 class="cu_h3">What is your phone number? Please include the country code if you are outside the UK</h3>
+            <input class="cu_signup_input" id='phonenumber' name='phonenumber' placeholder='Please enter a valid phone number'>
+            <h3 class="cu_h3">Where did you hear about us? (optional)</h3>
+            <input class="cu_signup_input" id='wherefound' name='wherefound' placeholder='e.g. Google search'>
+            <h3 class="cu_h3">Do you have a voucher code? (optional)</h3>
+            <input class="cu_signup_input" id='vouchercode' name='vouchercode' placeholder='Enter a valid voucher code if you have one'>
+        </div>
+
+        <div class="cu_section">
+            <h2 class="cu_h2">About the company:</h2>
+            <h3 class="cu_h3">What is the name of your company ?</h3>
+            <input class="cu_signup_input" id='companyname' name='companyname' placeholder='Please enter your company name'>
+            <h3 class="cu_h3">What is your position at the company ?</h3>
+            <input class="cu_signup_input" id='position' name='position' placeholder='Please enter your company name'>
+            <h3 class="cu_h3">What is the URL of your online shop?</h3>
+            <input class="cu_signup_input" id='storeurl' name='storeurl' placeholder='e.g. http://www.channelunity.com'>
+        </div>
+
+        <div class='cu_section'>
+            <h2 class="cu_h2">Account access details:</h2>
+            <h3 class="cu_h3">Choose a name for your account:</h3>
+            <input class="cu_signup_input" id='merchantname' name='merchantname' placeholder='We call this a Merchant Name (no spaces)'>
+            <h3 class="cu_h3">Choose a Username for yourself:</h3>
+            <input class="cu_signup_input" id='username' name='username' placeholder='You can add more users later'>
+            <h3 class="cu_h3">Choose a password with at least 6 characters:</h3>
+            <input type='password' class="cu_signup_input" id='password' name='password' placeholder='Pick a password for yourself'>
+            <h3 class="cu_h3">Please confirm your password:</h3>
+            <input type='password' class="cu_signup_input" id='confirm_pass' placeholder='Re-enter your password'>
+        </div>
+    </form>
+    <div><input class="cu_create" type='button' id='createAccount' value='Create Account' onclick="cujs_validateSignupForm('frmNew')"></div>
+</div>
+
+
+<!--Information panel-->
+<div class='cu_formcontainer' id='statusPanel' style='display:none'>
+    <div class='cu_section'>
+        <h3 class="cu_h3">Please wait...</h3>
+        <h3 class="cu_h3">We are setting up your account</h3>
+        <div id='statusOutput'>
+            <h4 class="cu_h4">Connecting to ChannelUnity...</h4>
+        </div>
+        <div>
+            <input class="cu_create" type='button' id='tryAgain' value='Go back' onclick="cujs_showFormAgain()" style='display:none'>
+            <input class="cu_create" type='button' id='goToCu' value='Finish' onclick="cujs_directlogon()" style='display:none'>
+        </div>
+    </div>
+</div>
+
+
+<!--OLD WAY: Hidden form to send details to ChannelUnity for API Authorisation 
+<div id='authsubmit' style='display:none'>
+    <form id='authsubmitform' name='authsubmitform' method='POST' action='https://my.channelunity.com/woocommerce/wooauth.php' target='cuframe'>
+        <input type='hidden' name='auth_mname' id='auth_mname'>
+        <input type='hidden' name='auth_un' id='auth_un'>
+        <input type='hidden' name='auth_api' id='auth_api'>
+        <input type='hidden' name='auth_url' id='auth_url'>
+        <input type='hidden' name='auth_hash' id='auth_hash'>
+        <input type='hidden' name='auth_callback' id='auth_callback'>
+    </form>
+</div>
+-->

@@ -1,0 +1,27 @@
+<div style="position:fixed; width:90%; top:0; height:95%; background-color:#f1f1f1; overflow-x:scroll; z-index: 90;">
+    <div id="cuheader">
+        <br><br>
+        <img src='<?php echo $culogo; ?>'>
+        <br>
+
+        <!--Message while ChannelUnity is loading-->
+        <div id="loadingheader">
+            <h2>Please wait while ChannelUnity loads...</h2>
+        </div>
+        
+        <div id="notloaded" style="display:none;">
+            <h2>No valid account details found</h2><br>
+            We couldn't find valid ChannelUnity login details for your account. If you already have an account, select 'Settings' in the WooCommerce plugin<br>
+            Go to the ChannelUnity Tab, enter your account details and click 'Save Changes'. Then return to this page.<br><br>
+        </div>
+    </div>
+
+    <!--Frame for WooCommerce Authentication-->
+    <div id="cuiframe" style="display:none; top:0px; margin-top:30px; height:98%; width:100%;">
+        <iframe id="cuframe" name="cuframe" style="display:block; height:100%; width:100%;"></iframe>
+    </div>
+
+    <!--Frame to display Actual ChannelUnity-->
+    <div id="cuiframe2" style="display:none; position:fixed; top:34px; height:92%; width:90%;z-index:50;">
+        <iframe id="cuframe2" name="cuframe2" style="display:block; height:100%; width:100%; ">iframe2</iframe>
+    </div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<div class="cu_container" id="cu_container">
+
+    <img src="<?php echo $culogo; ?>"><br>
+    <h1>
+        Custom Order Statuses
+    </h1>
+    <h4>This tool allows you to create new order statuses in WooCommerce.</h4>
+    <div class="cu_holder cu_cssorderstatus" id="cu_cssorderstatus">
+        The slug is the internal name, and must be lowercase, no spaces, and begin with wc-<br><br>
+        Translate is the status to send to ChannelUnity, which will interpret as follows:<br>
+        "completed" interpreted as "complete" in ChannelUnity<br>
+        "cancelled", "refunded", "failed" interpreted as "cancelled" in ChannelUnity<br>
+        Any others are interpreted as "processing" in ChannelUnity<br><br>
+
+        <div id='cu_orderstatus_fields'><?php echo $current;?></div>
+    </div>
+</div>
